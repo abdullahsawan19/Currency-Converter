@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+/* إعادة تعيين بسيطة */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* الحاوية الرئيسية */
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header-section h1 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* تنسيق الزر الرئيسي */
+.btn {
+  background-color: #4a90e2;
   color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(74, 144, 226, 0.3);
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  background-color: #357abd;
+  transform: translateY(-2px);
 }
 
-@keyframes App-logo-spin {
+.btn:active {
+  transform: translateY(0);
+}
+
+/* بطاقة التحويل (الفورم) */
+.converter-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  animation: slideDown 0.4s ease-out;
+}
+
+/* حركة بسيطة عند ظهور الفورم */
+@keyframes slideDown {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* تنسيق حقول الإدخال */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group label,
+.select-group label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  border-color: #4a90e2;
+}
+
+/* تنسيق صف العملات */
+.row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.select-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* منطقة النتيجة */
+.result-area {
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.result-area h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
 }
